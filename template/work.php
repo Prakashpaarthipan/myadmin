@@ -4,8 +4,8 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include_once('lib/config.php');
 include_once('lib/function_connect.php');
-
-
+require "classes/ExecutionTime.php";
+$start= microtime(true); 
  if($_SERVER['REQUEST_METHOD']=="POST" ){
   
     $file_url =array('ftp://ituser:S0ft@369@172.16.0.159/CALL_CENTRE/REQUESTS/31228_20190313082334/IMG_20190312_182037.jpg','ftp://ituser:S0ft@369@172.16.0.159/CALL_CENTRE/REQUESTS/31228_20190313082334/IMG_20190312_182047.jpg', 'ftp://ituser:S0ft@369@172.16.0.159/CALL_CENTRE/REQUESTS/31228_20190313082334/IMG_20190312_182052.jpg');
@@ -66,6 +66,8 @@ readfile($zipname);
 exit();
 
  }
+ $executionTime = new ExecutionTime();
+$executionTime->start();
 ?>
 
 <!DOCTYPE html>
@@ -182,7 +184,13 @@ include_once('lib/app-right-panel.php');
         </div>
 
       </div><!-- br-pagebody -->
-
+<?php
+//var_dump(getrusage());
+// code
+$executionTime->end();
+echo $executionTime."NOTED";
+echo "Process took ". number_format(microtime(true) - $start, 2). " seconds.";
+?>
     </div><!-- br-mainpanel -->
     <!-- ########## END: MAIN PANEL ########## -->
 
