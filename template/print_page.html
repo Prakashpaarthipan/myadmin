@@ -13,8 +13,8 @@
 	  background: white;
 	  display: block;
 	  margin: 0 auto;
-	  margin-bottom: 0.5cm;
-	  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+	
+	 
 	}
 	page[size="A4"] {  
 	  width: 21cm;
@@ -53,55 +53,133 @@
   font-family: Georgia, "Times New Roman",
         Times, serif;
    }
-ul.navbar {
-  list-style-type: none;
-  padding: 0;
+	.table>thead>tr>th
+	{
+		vertical-align: middle;
+	}
+	th { text-align:center; }
+
+	table, td, th {
+		border: 0px;
+	}
+
+	td {
+		padding: 0px;
+	}
+	table {
+		border-spacing: 0px;
+	}
+	@media print
+    {
+		body {
+			//background-image: url("images/The-Chennai-Silks-logo-light.png");
+			//background-repeat:no-repeat;
+			//background-position: center center;
+			//background-attachment:fixed;
+		}
+    	#non-printable { display: none; }
+		#non-printables { display: none; }
+
+		.pagebreak { page-break-before: always; } page-break-after works, as well
+		tr td.cls_pagebreak  { display: block; page-break-before: always; }
+		div.pagebreak
+	    {
+	    	page-break-after: always;
+	    	page-break-inside: avoid;
+	    }
+    }
+    table.fixed { table-layout:fixed; }
+</style>
+<style media="print">
+/* @page {
+  size: auto;
   margin: 0;
-  position: relative;
-  top: 2em;
-  left: 1em;
-  width: 9em }
-h1 {
-  font-family: Helvetica, Geneva, Arial,
-        SunSans-Regular, sans-serif }
-ul.navbar li {
-  background: white;
-  margin: 0.5em 0;
-  padding: 0.3em;
-  border-right: 1em solid black }
-ul.navbar a {
-  text-decoration: none }
-a:link {
-  color: blue }
-a:visited {
-  color: purple }
-address {
-  margin-top: 1em;
-  padding-top: 1em;
-  border-top: thin dotted }
+ 
+       } */
+        div.page
+      {
+        page-break-after: always;
+        page-break-inside: avoid;
+      }
+      @page
+	{
+		size: auto;   /* auto is the initial value */
+		margin: 3mm 3mm 3mm 3mm;  /* this affects the margin in the printer settings */
+	}
 </style>
 </head>
 
 <body>
 	<page size="A4">
 		
+		<table border=0 cell-padding=1 cell-spacing=1 align='center' class="fixed" style='border:5px solid #303030; background-color: #ffffff; border-style:double; width:796.8px; max-height:1123.2px; padding:7px'>
+			<tr>
+				<td width='100%' style="max-width: 773px; border: 1px solid #0088CC; min-height: 70px; height:auto; padding:3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;">
+				<table width='100%'>
+					<tr>
+					<td style='width:70%; height:20px; font-weight:bold; vertical-align: top;'>
+						<label style='font-size:13px;'>ADMIN / HR DEPT 4013490 / 11-02-2019 / 13490 / 02:19 PM</label> <!-- Approval Number -->
+					</td>
+					<td style='width:30%; height:20px; text-align:right;'>
+						<label style="font-weight:bold;">Page on : 1/5</label><br>
+											<label>Print on : 21/02/2020 06:04 PM.(11032)</label> <!-- Current Date & Time -->
+									</td>
+								</tr>
+								
 
+		<tr>
+			<td colspan=2 style="height: 140px;">
+			<table width='100%'>
+				<tr>
+					<td rowspan=3 style='width:20%; text-align:center;font-size:15px;font-weight:bold'>
+														  <img src='images/duplicate.png' style='width:100px; height:100px;' border=0><br>
+							&nbsp;						
+					</td>
+					<td style='width:60%; height:25px; padding-top:10px; padding-bottom:10px; text-align:center;'>
+						<label style='color:#0088CC; font-weight:bold'>						<a target="_blank" href="index.php"><img src='images/TCS_LOGO_2.jpg' border="0" style="width:300px"></a>
+					</label> <!-- Chennai Silks -->
+						
+					</td>
+					<td rowspan=3 style='width:20%; text-align:center;'>&nbsp;
+											</td>
+				</tr>
 
-<!-- Main content -->
-<h1>My first styled page</h1>
+				<tr>
+					<td style='width:60%; height:20px; text-align:center;'>
+						<label style='color:#0088CC; font-weight:bold'>Inter Office Correspondence</label> <!-- Chennai Silks -->
+					</td>
+				</tr>
 
-<p>Welcome to my styled page!
+				<tr>
+					<td colspan="2" style='width:100%; height:20px; text-align:center;'>
+						<table style="width: 100%;">
+						<tr><td style='width:50%; height:20px; text-align:right;'>
+							<label style='color:#000000; font-weight:bold'>Submitting for Approval</label> <!-- Submitting For -->
+						</td>
+						<td style='width:50%; height:20px; text-align:right;'>
+							<table style="width: 100%;">
+							<tr><td id='id_priority_date' style="text-align:right;">
+																	<span style="padding: 5px; text-align: right; font-weight: bold; margin-bottom: 5px;">Target Due Date : 25-FEB-2019</span><br>
+								<label>Date : 11/02/2019<br>
+									Process Priority : 											<span class="badge badge-ap3" style="font-size:20px; font-weight:bold;">AP-3</span>
+																			</label> <!-- Created Date -->
+								</td></tr>
+							</table>
+						</td>
+					</tr>
+					</table>
+					</td>
+				</tr>
 
-<p>It lacks images, but at least it has style.
-And it has links, even if they don't go
-anywhere&hellip;
-
-<p>There should be more here, but I don't know
-what yet.
-
-<!-- Sign and date the page, it's only polite! -->
-<address>Made 5 April 2004<br>
-  by myself.</address>
+				
+			</table>
+			</td>
+		</tr>
+							</table>
+						</td>
+		</tr>
+			
+		</table>
 
 	</page>
 </body>
